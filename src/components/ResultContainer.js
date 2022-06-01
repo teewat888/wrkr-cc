@@ -1,4 +1,5 @@
 import React from 'react'
+import { Result } from './Result'
 
 /**
 * @author
@@ -6,8 +7,12 @@ import React from 'react'
 **/
 
 export const ResultContainer = ({results}) => {
-  return(
-    <div>Result</div>
-   )
+  return (
+    <>
+    <hr/>
+      {results.total_count} repository results
+      <Result />
+    </>
+  );
 
  }
