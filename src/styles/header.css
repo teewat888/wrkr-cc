@@ -1,0 +1,10 @@
+div#hmenu a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+div#hmenu {
+    padding-right: 10px;
+    margin-top: -0.4rem;
+    float: left;
+}
