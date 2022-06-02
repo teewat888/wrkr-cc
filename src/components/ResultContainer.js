@@ -7,11 +7,18 @@ import { Result } from './Result'
 **/
 
 export const ResultContainer = ({results}) => {
+   if (!results || results === undefined || results.length === 0) {
+     //handling the undefinded
+     return null;
+   }
   return (
     <>
     <hr/>
       {results.total_count} repository results
-      <Result />
+      {results.items.map((result) => (
+        <Result key={result.id} repo={result} />
+      ))}
+      
     </>
   );
 

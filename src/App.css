@@ -14,46 +14,89 @@ body>#root>section>nav {
 
 /* Style the header */
 header {
-  padding: 30px;
-  text-align: left;
-  font-size: 35px;
+  padding: 22px 22px 22px 28px;
+  font-size: 30px;
   border-bottom: 1px solid;
   width: 100%;
 }
 
-header #hmenu {
-  float: right;
-  text-align: right;
-}
+
 
 /* Create two columns/boxes that floats next to each other */
-nav {
+/* nav {
   float: left;
   width: 25%;
   padding: 20px;
   border-right: 1px;
   background-color: rgb(253, 252, 252);
  
-}
+} */
 
 /* Style the list inside the menu */
-nav ul {
+/* nav ul {
   list-style-type: none;
   padding: 0;
-}
+} */
 
-nav li a {
+/* nav li a {
   display: block;
   border-bottom: 1px solid #000;
-}
+} */
 
 article {
   float: right;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   width: 75%;
 
 }
+.navBar {
+  float: left;
+  width: 25%;
+  padding: 20px;
+  border-right: 1px;
+  background-color: #F5F5F5;
+  padding: 0;
+}
 
+.navBar.expanded {
+  float: left;
+  width: 80%;
+  padding: 20px;
+  border-right: 1px;
+  background-color: rgb(253, 252, 252);
+  padding: 0;
+  z-index: 99;
+}
+
+.navBar ul {
+  list-style-type: none;
+  margin-top: -1px;
+  padding: 0;
+}
+
+.navBar ul li a {
+  padding-top: 1.8rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  height: 5rem;
+  font-size: 20px;
+  border-bottom: 1px solid #000;
+  display: block;
+}
+.navBar.expanded ul li a {
+ 
+  padding-top: 1.5rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  height: 5rem;
+  font-size: 25px;
+  border-bottom: 1px solid #000;
+  display: block;
+}
 
 
 /* Responsive layout - remove side menu and display hamberger menu*/
@@ -63,8 +106,12 @@ article {
     height: auto;
   }
 
-  nav {
+  .navBar {
     display: none;
+  }
+
+  .navBar.expanded {
+    display: block;
   }
 }
 @media screen and (min-width: 769px) { 

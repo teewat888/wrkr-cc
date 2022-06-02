@@ -6,10 +6,10 @@ import { Sidebar } from './Sidebar'
 * @function Section
 **/
 
-export const Section = (props) => {
+export const Section = ({isNavExpanded}) => {
   return(
     <section>
-        <Sidebar />
+        <Sidebar isNavExpanded={isNavExpanded} />
         <Content />
     </section>
    )

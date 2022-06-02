@@ -1,14 +1,13 @@
 import React from 'react'
-import '../styles/sidebar.css'
 /**
 * @author Teerawat
 * @function sidebar
 **/
 
-export const Sidebar = (props) => {
+export const Sidebar = ({ isNavExpanded }) => {
   return (
     <>
-      <nav className="navBar">
+      <nav className={isNavExpanded ? "navBar expanded" : "navBar"}>
         <ul>
           <li>
             <a href="#">Nav Item 1</a>
@@ -23,5 +22,4 @@ export const Sidebar = (props) => {
       </nav>
     </>
   );
-
- }
+};

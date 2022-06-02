@@ -1,0 +1,9 @@
+#resultArea {
+    width: 80%;
+    margin: auto;
+}
+@media screen and (max-width: 768px) {
+    #resultArea {
+        width: 100%;
+    }
+}
