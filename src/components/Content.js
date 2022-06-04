@@ -4,7 +4,8 @@ import { Filter } from './Filter';
 import { ResultContainer } from './ResultContainer';
 import FetchService from '../services/FetchService';
 import loading from '../images/loading.gif';
-import '../styles/content.css'
+import { ErrorMessage } from './ErrorMessage';
+import "../styles/content.css";
 /**
 * @author teerawat
 * @function Content - to provide container for the contene area
@@ -16,6 +17,7 @@ export const Content = ({ isNavExpanded }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isInputLenOk, setIsInputLenOk] = useState(false);
+  const [error,setError] = useState("");
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -29,6 +31,7 @@ export const Content = ({ isNavExpanded }) => {
   // check if the search term > 3 chars perform search
   useEffect(() => {
     let _timerId; // for timer
+    setError(""); // reset error message
     if (searchTerm.length >= 3) {
       setIsInputLenOk(true);
       // wait for 1 sec until no more activities to reduce api call
@@ -40,7 +43,11 @@ export const Content = ({ isNavExpanded }) => {
             setIsLoading(false);
             console.log(data)
           })
-          .catch((e) => console.log("error->", e));
+          .catch((e) => {
+              console.log("error->", e)
+              setIsLoading(false);
+              setError("Some errors occur, please try again later");
+            });
       }, 1000);
     } else {
       setIsInputLenOk(false);
@@ -58,9 +65,12 @@ export const Content = ({ isNavExpanded }) => {
       <SearchBox handleSearch={handleSearch} searchTerm={searchTerm} />
       <div id="resultArea">
         <Filter handleFilter={handleFilter} filter={filter} />
-        <p style={{ color: "#ff0000" }}>
-          {!isInputLenOk && "Please enter at least 3 characters"}
-        </p>
+        {!isInputLenOk && (
+          <ErrorMessage errorMessage="Please enter at least 3 characters" />
+        )}
+        {error && (
+          <ErrorMessage errorMessage={error} />
+        )}
         {isLoading && <img src={loading} width="150" height="150" />}
         <ResultContainer results={results} />
       </div>
