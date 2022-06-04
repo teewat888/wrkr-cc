@@ -4,7 +4,7 @@ import {ResultContainer} from "../components/ResultContainer";
 test("ResultContainer should render '# repository results' when result is more than zero ", () => {
     const results = { 
         total_count: 1, 
-        items: [{ id: 1, full_name: "aaa", license: {name: 'MIT'}, topics: ['a','b'] }]
+        items: [{ id: 1, name: "aaa", owner: {name: 'bbb'}, license: {name: 'MIT'}, topics: ['a','b'] }]
     };
     render(<ResultContainer results={results} />);
     expect(screen.getByText(/repository results/)).toBeInTheDocument();

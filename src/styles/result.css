@@ -1,0 +1,11 @@
+.last-line-text {
+    font-size: x-small;
+    color: #909090;
+}
+.filter-grey {
+    vertical-align: middle;
+    filter: invert(60%) sepia(15%) saturate(19%) hue-rotate(3deg) brightness(93%) contrast(85%);
+}
+.description {
+    font-size: small;
+}

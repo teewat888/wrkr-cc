@@ -15,9 +15,13 @@ export const ResultContainer = ({results}) => {
     <>
       <hr />
       <div data-testid="custom-element" />
-      {results.total_count > 0
-        ? `${results.total_count}repository results`
-        : "No Result"}
+      {results.total_count > 0 ? (
+        <p>
+          <b>{results.total_count}&nbsp;repository results</b> (only 20 results show here)
+        </p>
+      ) : (
+        "No Result"
+      )}
       {results.items.map((result) => (
         <Result key={result.id} repo={result} />
       ))}
