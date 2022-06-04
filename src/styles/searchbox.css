@@ -21,6 +21,7 @@
     border: 1px solid;
     border-radius: 100px;
     outline: none;
+    font-size: 18px;
 }
 
 .search-button {

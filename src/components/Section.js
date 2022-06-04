@@ -7,11 +7,11 @@ import { Sidebar } from './Sidebar'
 **/
 
 export const Section = ({isNavExpanded}) => {
-  return(
+  return (
     <section>
-        <Sidebar isNavExpanded={isNavExpanded} />
-        <Content />
+      <Sidebar isNavExpanded={isNavExpanded} />
+      <Content isNavExpanded={isNavExpanded} />
     </section>
-   )
+  );
 
  }

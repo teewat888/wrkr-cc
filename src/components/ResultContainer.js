@@ -7,19 +7,20 @@ import { Result } from './Result'
 **/
 
 export const ResultContainer = ({results}) => {
-   if (!results || results === undefined || results.length === 0) {
-     //handling the undefinded
-     return null;
-   }
+  //handling undefined and API not called 
+  if (!results || results.length === 0) {
+    return null;
+  }
   return (
     <>
-    <hr/>
-      {results.total_count} repository results
+      <hr />
+      <div data-testid="custom-element" />
+      {results.total_count > 0
+        ? `${results.total_count}repository results`
+        : "No Result"}
       {results.items.map((result) => (
         <Result key={result.id} repo={result} />
       ))}
-      
     </>
   );
-
- }
+}

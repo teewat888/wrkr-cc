@@ -1,6 +1,8 @@
 import React from 'react'
 import { formatDate } from '../helper/timeFormat';
 import { Pill } from './Pill';
+import repoImg from "../images/repo-16.svg";
+import star from '../images/star-16.svg';
 /**
 * @author
 * @function Result 
@@ -12,15 +14,18 @@ export const Result = ({repo}) => {
     <>
       <hr />
       <div>
-        <img src="images/repo-16.svg" /> {repo.full_name}
+        <div style={{ float: "left" }}>
+          <img src={repoImg} alt="repo image" />
+        </div>
+        <div>{repo.full_name}</div>
       </div>
       <div style={{ paddingLeft: "20px" }}>
         <div>{repo.description}</div>
         <Pill topics={repo.topics} />
         <div>
-          <img src="images/star-16.svg" /> {repo.stargazers_count}{" "}
+          <img src={star} alt="star image" /> {repo.stargazers_count}{" "}
           {repo.language} &nbsp;&nbsp;
-          {repo.license === null ? "no license" : repo.license.name} &nbsp;
+          {repo.license === null ? "No License Info" : repo.license.name} &nbsp;
           updated {formatDate(repo.updated_at)}
         </div>
       </div>
