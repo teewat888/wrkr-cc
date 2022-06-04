@@ -12,12 +12,15 @@ export const SearchBox = ({handleSearch, searchTerm}) => {
         <div className="search-input">
           <img className="icon" src="images/search.png" />
           <input
+            aria-label='search'
+            name="search"
             type="search"
             placeholder=""
             className="search-field"
             style={{ paddingLeft: "28px" }}
             value={searchTerm}
             onChange={handleSearch}
+            role="textbox"
           />
         </div>
         <button type="submit" className="search-button"></button>

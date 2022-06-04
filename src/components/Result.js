@@ -14,10 +14,11 @@ export const Result = ({repo}) => {
   return (
     <>
       <hr />
-      <div style={{paddingBottom: "5px"}}>
+      <div style={{ paddingBottom: "5px" }}>
         <img src={repoImg} alt="repo image" className="filter-grey" />
         &nbsp;
-        {repo.owner.login}/{repo.name}
+        <span className='repo-owner'>{repo.owner.login}/</span>
+        <span className='repo-name'>{repo.name}</span>
       </div>
       <div style={{ paddingLeft: "20px" }}>
         <div className="description">{repo.description}</div>

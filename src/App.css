@@ -16,6 +16,7 @@ body>#root>section>nav {
 header {
   padding: 22px 22px 22px 28px;
   font-size: 30px;
+  font-weight: bold;
   border-bottom: 1px solid;
   width: 100%;
 }
@@ -98,6 +99,7 @@ article {
   font-size: 20px;
   border-bottom: 1px solid #000;
   display: block;
+  color: #000;
 }
 .navBar.expanded ul li a {
  

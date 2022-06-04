@@ -9,3 +9,12 @@
 .description {
     font-size: small;
 }
+.repo-owner {
+    font-size: medium;
+    color: #365FCB;
+}
+.repo-name {
+    font-size: medium;
+    font-weight: bold;
+    color: #365FCB;
+}
