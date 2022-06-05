@@ -8,7 +8,7 @@ import { Result } from './Result'
 
 export const ResultContainer = ({results}) => {
   //handling undefined and API not called 
-  if (!results || results.length === 0) {
+  if (!results || results.length === 0 || results === undefined) {
     return null;
   }
   return (

@@ -1,6 +1,81 @@
 import { render, screen } from "@testing-library/react";
 import { Result } from '../components/Result';
 
+test("Result should render repo name", () => {
+  const result = {
+    id: 1,
+    name: "react",
+    owner: { login: "bbb" },
+    description: "my description",
+    license: null,
+    stargazers_count: 10000,
+    topics: ["a", "b"],
+    language: "Java",
+  };
+  render(<Result repo={result} />);
+  expect(screen.getByText(/react/)).toBeInTheDocument();
+});
+
+test("Result should render repo owner", () => {
+  const result = {
+    id: 1,
+    name: "react",
+    owner: { login: "bbb" },
+    description: "my description",
+    license: null,
+    stargazers_count: 10000,
+    topics: ["a", "b"],
+    language: "Java",
+  };
+  render(<Result repo={result} />);
+  expect(screen.getByText(/bbb/)).toBeInTheDocument();
+});
+
+test("Result should render repo description", () => {
+  const result = {
+    id: 1,
+    name: "react",
+    owner: { login: "bbb" },
+    description: "my description",
+    license: null,
+    stargazers_count: 10000,
+    topics: ["a", "b"],
+    language: "Java",
+  };
+  render(<Result repo={result} />);
+  expect(screen.getByText(/my description/)).toBeInTheDocument();
+});
+
+test("Result should render repo stars count", () => {
+  const result = {
+    id: 1,
+    name: "react",
+    owner: { login: "bbb" },
+    description: "my description",
+    license: null,
+    stargazers_count: 10000,
+    topics: ["a", "b"],
+    language: "Java",
+  };
+  render(<Result repo={result} />);
+  expect(screen.getByText(/10000/)).toBeInTheDocument();
+});
+
+test("Result should render repo language", () => {
+  const result = {
+    id: 1,
+    name: "react",
+    owner: { login: "bbb" },
+    description: "my description",
+    license: null,
+    stargazers_count: 10000,
+    topics: ["a", "b"],
+    language: "Java",
+  };
+  render(<Result repo={result} />);
+  expect(screen.getByText(/Java/)).toBeInTheDocument();
+});
+
 test("Result should render 'No License Info' when search result provides null for license arttr", () => {
   const result = {
     id: 1,
@@ -8,6 +83,7 @@ test("Result should render 'No License Info' when search result provides null fo
     owner: { login: "bbb" },
     license: null,
     topics: ["a", "b"],
+    language: "Java"
   };
   render(<Result repo={result} />);
   expect(screen.getByText(/No License Info/)).toBeInTheDocument();

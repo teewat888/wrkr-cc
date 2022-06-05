@@ -41,7 +41,7 @@ export const Content = ({ isNavExpanded }) => {
           .then((data) => {
             setResults(data);
             setIsLoading(false);
-            //console.log(data)
+            console.log(data)
           })
           .catch((e) => {
               console.log("error->", e)

@@ -10,7 +10,7 @@ test("ResultContainer should render '# repository results' when result is more t
     expect(screen.getByText(/repository results/)).toBeInTheDocument();
     });
 
-test("ResultContainer should render 'No Result' when result is equal to zero ", () => {
+test("ResultContainer should render 'No Results' when result is equal to zero ", () => {
     const results = {
         total_count: 0,
         items: [],
