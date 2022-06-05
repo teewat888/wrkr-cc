@@ -5,7 +5,7 @@ test("Result should render 'No License Info' when search result provides null fo
   const result = {
     id: 1,
     name: "aaa",
-    owner: { name: "bbb" },
+    owner: { login: "bbb" },
     license: null,
     topics: ["a", "b"],
   };
@@ -17,7 +17,7 @@ test("Result should render license info when search result provides license info
   const result = {
     id: 1,
     name: "aaa",
-    owner: { name: "bbb" },
+    owner: { login: "bbb" },
     license: { name: "MIT License" },
     topics: ["a", "b"],
   };
@@ -29,7 +29,7 @@ test("Result should render correct updated_at time format", () => {
   const result = {
     id: 1,
     name: "aaa",
-    owner: { name: "bbb" },
+    owner: { login: "bbb" },
     license: { name: "MIT License" },
     topics: ["a", "b"],
     updated_at: "2022-04-29T21:45:15Z",

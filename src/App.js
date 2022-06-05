@@ -8,8 +8,8 @@ function App() {
    const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
    <>
-   <Header isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
-   <Section isNavExpanded={isNavExpanded} />
+    <Header isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
+    <Section isNavExpanded={isNavExpanded} />
    </>
   );
 }

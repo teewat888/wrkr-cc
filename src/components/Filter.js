@@ -8,9 +8,14 @@ import React from 'react'
 export const Filter = ({handleFilter, filter}) => {
   return (
     <>
-      <div style={{paddingTop: "20px"}}>
+      <div style={{ paddingTop: "20px" }}>
         Filter by language:
-        <select value={filter} onChange={handleFilter} style={{border: "none", paddingLeft: "40px"}}>
+        <select
+          aria-label="filter"
+          value={filter}
+          onChange={handleFilter}
+          style={{ border: "none", paddingLeft: "40px" }}
+        >
           <option value="All">All</option>
           <option value="javascript">JavaScript</option>
           <option value="typescript">TypeScript</option>

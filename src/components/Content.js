@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { SearchBox } from './SearchBox';
 import { Filter } from './Filter';
 import { ResultContainer } from './ResultContainer';
-import FetchService from '../services/FetchService';
 import loading from '../images/loading.gif';
 import { ErrorMessage } from './ErrorMessage';
+import { getRepo } from '../services/getRepo';
 import "../styles/content.css";
 /**
 * @author teerawat
@@ -37,11 +37,11 @@ export const Content = ({ isNavExpanded }) => {
       // wait for 1 sec until no more activities to reduce api call
       _timerId = setTimeout(() => {
         setIsLoading(true);
-        FetchService.fetchLanguage(searchTerm, filter)
+        getRepo(searchTerm, filter)
           .then((data) => {
             setResults(data);
             setIsLoading(false);
-            console.log(data)
+            //console.log(data)
           })
           .catch((e) => {
               console.log("error->", e)
@@ -60,7 +60,7 @@ export const Content = ({ isNavExpanded }) => {
   }, [searchTerm, filter]);
 
   return (
-    <article>
+    <article className={isNavExpanded ? "back-drop" : ""}>
       <h1 style={{ fontSize: "2rem", textAlign: "center" }}>Search</h1>
       <SearchBox handleSearch={handleSearch} searchTerm={searchTerm} />
       <div id="resultArea">
@@ -71,7 +71,7 @@ export const Content = ({ isNavExpanded }) => {
         {error && (
           <ErrorMessage errorMessage={error} />
         )}
-        {isLoading && <img src={loading} width="150" height="150" />}
+        {isLoading && <img src={loading} width="150" height="150" alt="loading" />}
         <ResultContainer results={results} />
       </div>
     </article>
