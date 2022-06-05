@@ -10,8 +10,7 @@ export const Pill = ({topics}) => {
   return (
     <>
       {topics.map((topic,i) => (
-        <button className="button" key={i}>{topic}</button>
-       
+        <button className="button" key={i}>{topic}</button>     
       ))}
     </>
   );

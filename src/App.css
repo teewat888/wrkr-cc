@@ -39,27 +39,6 @@ div#hmenu {
   display: none;
 }
 
-
-/* Create two columns/boxes that floats next to each other */
-/* nav {
-  float: left;
-  width: 25%;
-  padding: 20px;
-  border-right: 1px;
-  background-color: rgb(253, 252, 252);
- 
-} */
-
-/* Style the list inside the menu */
-/* nav ul {
-  list-style-type: none;
-  padding: 0;
-} */
-
-/* nav li a {
-  display: block;
-  border-bottom: 1px solid #000;
-} */
 section {
   position: relative;
 }
@@ -78,6 +57,7 @@ article {
   border-right: 1px;
   background-color: #F5F5F5;
   padding: 0;
+  display: block;
 }
 
 .navBar.expanded {
@@ -89,6 +69,7 @@ article {
   z-index: 99;
   height: calc(100vh - 77px);
   position: absolute;
+  display: none;
 }
 
 .navBar ul {
@@ -110,7 +91,6 @@ article {
   color: #000;
 }
 .navBar.expanded ul li a {
- 
   padding-top: 1.5rem;
   padding-left: 2rem;
   padding-bottom: 1rem;
@@ -133,12 +113,12 @@ article {
   
   .back-drop::after {
     content: "";
-      background: rgba(0, 0, 0, 0.65);
-      position: fixed;
-      top: 78px;
-      left: 0;
-      bottom: 0;
-      right: 0;
+    background: rgba(0, 0, 0, 0.65);
+    position: fixed;
+    top: 78px;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 
   .navBar {

@@ -8,7 +8,7 @@ import { getRepo } from '../services/getRepo';
 import "../styles/content.css";
 /**
 * @author teerawat
-* @function Content - to provide container for the contene area
+* @function Content - to provide container for the content area
 **/
 
 export const Content = ({ isNavExpanded }) => {
@@ -28,13 +28,13 @@ export const Content = ({ isNavExpanded }) => {
     console.log("Filter : ", filter);
   };
 
-  // check if the search term > 3 chars perform search
+  // monitor search input & filter value
   useEffect(() => {
-    let _timerId; // for timer
+    let _timerId; // timer handler for debouncing
     setError(""); // reset error message
     if (searchTerm.length >= 3) {
       setIsInputLenOk(true);
-      // wait for 1 sec until no more activities to reduce api call
+      //debounce input for 1 sec
       _timerId = setTimeout(() => {
         setIsLoading(true);
         getRepo(searchTerm, filter)
